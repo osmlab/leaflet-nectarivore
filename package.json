@@ -1,0 +1,76 @@
+{
+  "name": "leaflet-nectarivore",
+  "description": " Leaflet plugin to create layers based on remote services (Overpass, Osmose, etc.) ",
+  "version": "0.1.0",
+  "homepage": "https://github.com/GuillaumeAmat/leaflet-nectarivore",
+  "repository": "https://github.com/GuillaumeAmat/leaflet-nectarivore",
+  "bugs": "https://github.com/GuillaumeAmat/leaflet-nectarivore/issues",
+  "author": "Guillaume AMAT <guillaume@amat.io>",
+  "license": "MIT",
+  "keywords": [
+    "osm",
+    "openstreetmap",
+    "leaflet",
+    "nectarivore",
+    "omnivore",
+    "overpass",
+    "osmose"
+  ],
+  "main": "build/index.js",
+  "scripts": {
+    "watch": "webpack -w --progress",
+    "build": "cross-env NODE_ENV=production webpack --progress",
+    "precommit": "lint-staged",
+    "test": "jest --env=jsdom",
+    "test-watch": "npm test -- --watch",
+    "test-ci": "npm test -- --ci",
+    "test-coverage": "npm run test-ci -- --coverage",
+    "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
+    "lint": "eslint 'src/**/*.js'"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!<rootDir>/node_modules/"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "src/**/*.{js,json}": [
+      "eslint",
+      "git add"
+    ],
+    "src/**/*.js": [
+      "jest --ci",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "leaflet": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.11.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.3.2",
+    "eslint-plugin-json": "^1.2.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.8.2",
+    "raw-loader": "^0.5.1",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
