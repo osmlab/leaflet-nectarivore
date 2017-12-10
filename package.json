@@ -39,6 +39,10 @@
     "singleQuote": true
   },
   "lint-staged": {
+    "src/**/*.{js,jsx,json}": [
+      "prettier --single-quote --write",
+      "git add"
+    ],
     "src/**/*.{js,json}": [
       "eslint",
       "git add"
