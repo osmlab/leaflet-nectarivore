@@ -7757,7 +7757,7 @@ var defaultOptions = {
   minZoom: 15,
   endpoint: '',
   loadedBounds: [],
-  markerIcon: null,
+  markerIcon: _leaflet2.default.Icon(),
   timeout: 30 * 1000, // Milliseconds
   retryOnTimeout: false,
   noInitialRequest: false,
