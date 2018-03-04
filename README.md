@@ -90,7 +90,7 @@ const map = new L.Map('my-map')
   minZoom: 15,
   endpoint: '',
   loadedBounds: [],
-  markerIcon: L.Icon(),
+  markerIcon: null,
   timeout: 30 * 1000, // Milliseconds
   retryOnTimeout: false,
   noInitialRequest: false,

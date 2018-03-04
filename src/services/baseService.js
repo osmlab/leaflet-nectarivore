@@ -9,7 +9,7 @@ const defaultOptions = {
   minZoom: 15,
   endpoint: '',
   loadedBounds: [],
-  markerIcon: L.Icon(),
+  markerIcon: null,
   timeout: 30 * 1000, // Milliseconds
   retryOnTimeout: false,
   noInitialRequest: false,
