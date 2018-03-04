@@ -24,7 +24,7 @@ $ npm install leaflet-nectarivore
 
 ### Overpass
 
-``` javascript
+```javascript
 import Nectarivore from 'leaflet-nectarivore';
 
 const attributions = [
@@ -54,7 +54,7 @@ In order to get a valid query the [Overpass-turbo IDE](http://overpass-turbo.eu/
 
 ### Osmose
 
-``` javascript
+```javascript
 import Nectarivore from 'leaflet-nectarivore';
 
 const attributions = [
