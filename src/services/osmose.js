@@ -53,7 +53,7 @@ const Osmose = BaseService.extend({
    * @return {Promise}
    */
   buildRequestPromise(bounds) {
-    const options = this.buildOsmoseOptions(bounds, this.options);
+    const options = this.buildOsmoseOptions(this.options, bounds);
 
     return this.osmoseRequest.fetchErrors(options);
   },
