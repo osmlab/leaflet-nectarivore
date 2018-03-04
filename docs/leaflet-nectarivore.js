@@ -8074,7 +8074,7 @@ var Osmose = _baseService2.default.extend({
    * @return {Promise}
    */
   buildRequestPromise: function buildRequestPromise(bounds) {
-    var options = this.buildOsmoseOptions(bounds, this.options);
+    var options = this.buildOsmoseOptions(this.options, bounds);
 
     return this.osmoseRequest.fetchErrors(options);
   },
@@ -8347,4 +8347,4 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_leaflet__;
 
 /******/ });
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=leaflet-nectarivore.js.map
