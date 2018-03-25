@@ -16,7 +16,7 @@
     "overpass",
     "osmose"
   ],
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "moduleRoots": [
     "src",
     "node_modules"
@@ -30,7 +30,9 @@
     "test-ci": "npm test -- --ci",
     "test-coverage": "npm run test-ci -- --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
-    "lint": "eslint 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.js'",
+    "preversion": "npm run test-ci && npm run build && cp dist/leaflet-nectarivore.js docs/",
+    "postversion": "git push && git push --tags"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -43,15 +45,9 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
     "src/**/*.{js,json}": [
+      "prettier --single-quote --write",
       "eslint",
-      "git add"
-    ],
-    "src/**/*.js": [
       "npm run test-ci",
       "git add"
     ]
