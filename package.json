@@ -17,6 +17,9 @@
     "osmose"
   ],
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "moduleRoots": [
     "src",
     "node_modules"
