@@ -34,7 +34,7 @@
     "test-coverage": "npm run test-ci -- --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
     "lint": "eslint 'src/**/*.js'",
-    "preversion": "npm run test-ci && npm run build && cp dist/leaflet-nectarivore.js docs/",
+    "preversion": "npm run test-ci && npm run build && cp dist/index.js docs/",
     "postversion": "git push && git push --tags"
   },
   "jest": {
