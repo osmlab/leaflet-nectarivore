@@ -1,7 +1,7 @@
 {
   "name": "leaflet-nectarivore",
   "description": " Leaflet plugin to create layers based on remote services (Overpass, Osmose, etc.) ",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/osmlab/leaflet-nectarivore",
   "repository": "https://github.com/osmlab/leaflet-nectarivore",
   "bugs": "https://github.com/osmlab/leaflet-nectarivore/issues",
