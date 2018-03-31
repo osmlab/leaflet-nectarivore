@@ -51,7 +51,7 @@
     "src/**/*.{js,json}": [
       "prettier --single-quote --write",
       "eslint",
-      "npm run test-ci",
+      "npm run test-ci -- --findRelatedTests",
       "git add"
     ]
   },
