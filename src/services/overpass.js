@@ -1,3 +1,4 @@
+import fetch from 'unfetch';
 import L from 'leaflet';
 import BaseService from 'services/baseService';
 import { buildIconMarker, buildCircleMarker } from 'helpers/marker';
