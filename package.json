@@ -29,9 +29,8 @@
     "build": "cross-env NODE_PATH=src NODE_ENV=production webpack --mode production --progress",
     "precommit": "lint-staged",
     "test": "cross-env NODE_PATH=src jest --env=jsdom",
-    "test-watch": "npm test -- --watch",
-    "test-ci": "npm test -- --ci",
-    "test-coverage": "npm run test-ci -- --coverage",
+    "test-watch": "npm test -- --watch --coverage",
+    "test-ci": "npm test -- --ci --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
     "lint": "eslint 'src/**/*.js'",
     "preversion": "npm run test-ci && npm run build && cp dist/leaflet-nectarivore.js docs/",
@@ -41,6 +40,10 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json"
     ]
   },
   "prettier": {
