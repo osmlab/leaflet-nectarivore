@@ -99,8 +99,8 @@ export default class Bounds {
   static buildBoundsListFromClips(clips) {
     return clips.map(clip =>
       L.latLngBounds(
-        L.latLng(clip[0].Y / 1000000, clip[0].X / 1000000),
-        L.latLng(clip[2].Y / 1000000, clip[2].X / 1000000)
+        L.latLng(clip[0].Y / 1000000, clip[0].X / 1000000).wrap(),
+        L.latLng(clip[2].Y / 1000000, clip[2].X / 1000000).wrap()
       )
     );
   }

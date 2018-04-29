@@ -26,7 +26,7 @@ export function buildLargerBounds(rawBounds) {
   bounds._northEast.lng += biggestDimension / 2;
 
   return L.latLngBounds(
-    L.latLng(bounds._southWest.lat, bounds._southWest.lng),
-    L.latLng(bounds._northEast.lat, bounds._northEast.lng)
+    L.latLng(bounds._southWest.lat, bounds._southWest.lng).wrap(),
+    L.latLng(bounds._northEast.lat, bounds._northEast.lng).wrap()
   );
 }
