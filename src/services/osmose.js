@@ -107,7 +107,7 @@ const Osmose = BaseService.extend({
 
       this.osmoseIds[element.error_id] = true;
 
-      const latLng = new L.LatLng(element.lat, element.lon);
+      const latLng = L.latLng(element.lat, element.lon);
       const marker = this.options.markerIcon
         ? buildIconMarker(latLng, this.options.markerIcon)
         : buildCircleMarker(latLng);
