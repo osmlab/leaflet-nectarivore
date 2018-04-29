@@ -1,7 +1,7 @@
 {
   "name": "leaflet-nectarivore",
   "description": " Leaflet plugin to create layers based on remote services (Overpass, Osmose, etc.) ",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "homepage": "https://github.com/osmlab/leaflet-nectarivore",
   "repository": "https://github.com/osmlab/leaflet-nectarivore",
   "bugs": "https://github.com/osmlab/leaflet-nectarivore/issues",
@@ -29,9 +29,8 @@
     "build": "cross-env NODE_PATH=src NODE_ENV=production webpack --mode production --progress",
     "precommit": "lint-staged",
     "test": "cross-env NODE_PATH=src jest --env=jsdom",
-    "test-watch": "npm test -- --watch",
-    "test-ci": "npm test -- --ci",
-    "test-coverage": "npm run test-ci -- --coverage",
+    "test-watch": "npm test -- --watch --coverage",
+    "test-ci": "npm test -- --ci --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
     "lint": "eslint 'src/**/*.js'",
     "preversion": "npm run test-ci && npm run build && cp dist/leaflet-nectarivore.js docs/",
@@ -41,6 +40,10 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json"
     ]
   },
   "prettier": {
@@ -51,7 +54,7 @@
     "src/**/*.{js,json}": [
       "prettier --single-quote --write",
       "eslint",
-      "npm run test-ci",
+      "npm run test-ci -- --findRelatedTests",
       "git add"
     ]
   },

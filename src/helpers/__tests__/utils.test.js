@@ -15,8 +15,8 @@ describe('When testing the buildLargerBounds utility', () => {
       L.latLng(44.87436239539944, -0.5290603637695314)
     );
     const largerBounds = L.latLngBounds(
-      L.latLng(44.93513052284084, -0.4682922363281251),
-      L.latLng(44.710587361078666, -0.7113647460937501)
+      L.latLng(44.93513052284084, -0.468292236328125),
+      L.latLng(44.710587361078666, -0.71136474609375)
     );
 
     expect(buildLargerBounds(bounds)).toEqual(largerBounds);
@@ -28,8 +28,8 @@ describe('When testing the buildLargerBounds utility', () => {
       L.latLng(44.879957968083765, -0.5664825439453126)
     );
     const largerBounds = L.latLngBounds(
-      L.latLng(44.929263119918346, -0.5171773921107353),
-      L.latLng(44.73204251258004, -0.6617929448033274)
+      L.latLng(44.929263119918346, -0.5171773921107388),
+      L.latLng(44.73204251258004, -0.6617929448033237)
     );
 
     expect(buildLargerBounds(bounds)).toEqual(largerBounds);

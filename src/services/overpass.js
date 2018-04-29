@@ -99,8 +99,8 @@ const Overpass = BaseService.extend({
 
       const latLng =
         element.type === 'node'
-          ? new L.LatLng(element.lat, element.lon)
-          : new L.LatLng(element.center.lat, element.center.lon);
+          ? L.latLng(element.lat, element.lon)
+          : L.latLng(element.center.lat, element.center.lon);
 
       const marker = this.options.markerIcon
         ? buildIconMarker(latLng, this.options.markerIcon)

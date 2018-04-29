@@ -46,7 +46,7 @@ const overpassLayer = Nectarivore.overpass({
 const map = new L.Map('my-map')
   .addLayer(tileLayer)
   .addLayer(overpassLayer)
-  .setView(new L.LatLng(44.84061, -0.5724), 15);
+  .setView(L.latLng(44.84061, -0.5724), 15);
 ```
 
 In order to get a valid query the [Overpass-turbo IDE](http://overpass-turbo.eu/) might help.
@@ -78,7 +78,7 @@ const osmoseLayer = L.Nectarivore.osmose({
 const map = new L.Map('my-map')
   .addLayer(tileLayer)
   .addLayer(osmoseLayer)
-  .setView(new L.LatLng(44.84061, -0.5724), 15);
+  .setView(L.latLng(44.84061, -0.5724), 15);
 ```
 
 

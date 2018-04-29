@@ -1,7 +1,10 @@
 import L from 'leaflet';
 import Bounds from '../bounds';
 
-const latLngBounds = L.latLngBounds([2.1234, 3.876], [-4.1234, -0.876]);
+const latLngBounds = L.latLngBounds(
+  [2.1234, 3.8759999999999764],
+  [-4.1234, -0.8759999999999764]
+);
 const otherLatLngBounds = L.latLngBounds([3.1234, 2.876], [-5.1234, 10.876]);
 
 describe('When testing the Bounds class', () => {
@@ -54,10 +57,10 @@ describe('When testing the Bounds class', () => {
     it('Should return proper clips', () => {
       expect(Bounds.buildClipsFromBoundsList([latLngBounds])).toEqual([
         [
-          { X: -876000, Y: -4123400 },
-          { X: -876000, Y: 2123400 },
-          { X: 3876000, Y: 2123400 },
-          { X: 3876000, Y: -4123400 }
+          { X: -875999.9999999764, Y: -4123400 },
+          { X: -875999.9999999764, Y: 2123400 },
+          { X: 3875999.9999999764, Y: 2123400 },
+          { X: 3875999.9999999764, Y: -4123400 }
         ]
       ]);
     });
@@ -66,10 +69,10 @@ describe('When testing the Bounds class', () => {
       expect(
         Bounds.buildBoundsListFromClips([
           [
-            { X: -876000, Y: -4123400 },
-            { X: -876000, Y: 2123400 },
-            { X: 3876000, Y: 2123400 },
-            { X: 3876000, Y: -4123400 }
+            { X: -875999.9999999764, Y: -4123400 },
+            { X: -875999.9999999764, Y: 2123400 },
+            { X: 3875999.9999999764, Y: 2123400 },
+            { X: 3875999.9999999764, Y: -4123400 }
           ]
         ])
       ).toEqual([latLngBounds]);
