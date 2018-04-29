@@ -27,13 +27,14 @@
   "scripts": {
     "watch": "cross-env NODE_PATH=src webpack --mode development -w --progress",
     "build": "cross-env NODE_PATH=src NODE_ENV=production webpack --mode production --progress",
+    "postbuild": "cp dist/leaflet-nectarivore.js docs/",
     "precommit": "lint-staged",
     "test": "cross-env NODE_PATH=src jest --env=jsdom",
     "test-watch": "npm test -- --watch --coverage",
     "test-ci": "npm test -- --ci --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
     "lint": "eslint 'src/**/*.js'",
-    "preversion": "npm run test-ci && npm run build && cp dist/leaflet-nectarivore.js docs/",
+    "preversion": "npm run test-ci && npm run build && git add docs",
     "postversion": "git push && git push --tags"
   },
   "jest": {
