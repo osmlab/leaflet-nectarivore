@@ -15,7 +15,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'leaflet-nectarivore.js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    libraryExport: 'default'
   },
   resolve: {
     modules: [
