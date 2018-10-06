@@ -1,7 +1,16 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const plugins = [
+  new BundleAnalyzerPlugin({
+    analyzerMode: 'static',
+    openAnalyzer: !process.env.CI,
+  })
+];
 
 module.exports = {
   devtool: 'cheap-module-source-map',
+  plugins,
   externals: [{
     leaflet: {
       commonjs: 'leaflet',
