@@ -1,4 +1,5 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const plugins = [
@@ -11,13 +12,7 @@ const plugins = [
 module.exports = {
   devtool: 'cheap-module-source-map',
   plugins,
-  externals: [{
-    leaflet: {
-      commonjs: 'leaflet',
-      commonjs2: 'leaflet',
-      root: 'L',
-    }
-  }],
+  externals: [nodeExternals()],
   entry: {
     index: path.resolve(__dirname, 'src/index.js')
   },
